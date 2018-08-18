@@ -1,0 +1,56 @@
+<!--
+    03. Vue JS
+
+    Vue Instance Life Cycle
+    - 데이터 관찰
+    - Vue 객체가 생성될 때, 소멸 될 때 이벤트 속성을 부여할 수 있다.
+-->
+
+<html>
+  <head>
+    <title>Vue Sample</title>
+  </head>
+  <body>
+    <div id="app">
+      {{ message }}
+    </div>
+
+    <script src="https://unpkg.com/vue@2.3.3"></script>
+    <script>
+        'use strict'
+
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue.js!'
+            },
+            // 인스턴스가 생성되기 전 (Events & Life Cycle)
+            beforeCreate: function() {
+                console.log("beforeCreate");
+            },
+            // 인스턴스가 생성되고 난 이후
+            created: function() {
+                console.log("created");
+            },
+            beforeMount: function() {
+                console.log("beforeMount");
+            },
+            mounted: function() {
+                console.log("mounted");
+            },
+            beforeUpdate() {
+                console.log("beforeUpdate");
+            },
+            updated: function() {
+                console.log("updated");
+            },
+            beforeDestroy: function() {
+                console.loh('beforeDestory')
+            },
+            destroy: function() {
+                console.loh('Destory')
+            },
+        })
+    </script>
+  </body>
+</html>
