@@ -32,21 +32,27 @@
             created: function() {
                 console.log("created");
             },
+            // 생성된 객체가 view로 올라가기 전
             beforeMount: function() {
                 console.log("beforeMount");
             },
+            // 생성된 객체가 view로 올라가고 난 이후
             mounted: function() {
                 console.log("mounted");
             },
+            // 객체가 업데이트 되기 전
             beforeUpdate() {
                 console.log("beforeUpdate");
             },
+            // 객체가 업데이트 되고 난 이후
             updated: function() {
                 console.log("updated");
             },
+            // 객체가 제거되기 전
             beforeDestroy: function() {
                 console.loh('beforeDestory')
             },
+            // 객체가 제거되고 난 이후
             destroy: function() {
                 console.loh('Destory')
             },
