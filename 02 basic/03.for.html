@@ -1,0 +1,27 @@
+<!--
+    반복문
+-->
+
+<html>
+    <head>
+        <title>Vue Sample</title>
+    </head>
+    <body>
+        <div id="app">
+            <ol>
+                <li v-for="value in list">
+                    {{value}}
+                </li>
+            </ol>
+        </div>
+        <script src="https://unpkg.com/vue@2.4.4/dist/vue.js"></script>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    list: ['aa', 'bb', 'cc']
+                },
+            })
+        </script>
+    </body>
+</html>
