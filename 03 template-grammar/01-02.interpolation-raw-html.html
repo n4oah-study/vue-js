@@ -1,9 +1,10 @@
 <!--
     #### interpolation (보간법)
     
-    ### 문자열
-    Vue JS에서의 가장 일반적인 데이터 바인딩 형태
-    사용 방법 : {{ 데이터 변수 명 }}
+    ### 원시 HTML
+    단순 문자열이 아닌 HTML 코드를 삽입할 때 사용
+
+    - v-html 디렉티브 사용
 -->
 
 <html>
@@ -12,9 +13,8 @@
     </head>
     <body>
         <div id="app">
-            <p>{{ message }}</p>
-            <p v-once>{{ vOnceMessage }}</p>
-            <button v-on:click="onceTest">클릭시 데이터 변경</button>
+            String : {{ rawHtml }} <br/>
+            rawHtml : <span v-html="rawHtml"></span>
         </div>
         <script src="https://unpkg.com/vue@2.4.4/dist/vue.js"></script>
         <script>
@@ -23,13 +23,7 @@
             var app = new Vue({
                 el: '#app',
                 data: {
-                    message: '보간법',
-                    vOnceMessage: '변경되지 않습니다.'
-                },
-                methods: {
-                    onceTest() {
-                        this.vOnceMessage = '데이터가 변경 되었습니다.';
-                    }
+                    rawHtml: '<span style="color: red">HTML 태그 삽입</span>',
                 }
             })
         </script>
