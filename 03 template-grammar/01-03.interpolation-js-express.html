@@ -1,0 +1,32 @@
+<!--
+    #### interpolation (보간법)
+    
+    ### 자바스크립트 표현식 사용
+
+-->
+
+<html>
+    <head>
+        <title>Vue Sample</title>
+    </head>
+    <body>
+        <div id="app">
+            정수에 +1하기 : {{ number + 1 }} <br/>
+            3항 연산자 : {{ check ? 'YES' : 'NO' }} <br/>
+            split 하고 거꾸로 돌리기 : {{ message.split(' ').reverse().join(' ') }}
+        </div>
+        <script src="https://unpkg.com/vue@2.4.4/dist/vue.js"></script>
+        <script>
+            'use strict'
+
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    number: 8,
+                    check: true,
+                    message: 'abcde fghi jklmnop'
+                }
+            })
+        </script>
+    </body>
+</html>
