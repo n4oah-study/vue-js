@@ -1,7 +1,8 @@
 <!--
     #### interpolation (보간법)
 
-    가장 
+    Vue JS에서의 가장 일반적인 데이터 바인딩 형태
+    사용 방법 : {{ 데이터 변수 명 }}
 -->
 
 <html>
@@ -10,16 +11,25 @@
     </head>
     <body>
         <div id="app">
-            <p v-if="seen">보인다</p>
+            <p>{{ message }}</p>
+            <p v-once>{{ vOnceMessage }}</p>
+            <button v-on:click="onceTest">클릭시 데이터 변경</button>
         </div>
         <script src="https://unpkg.com/vue@2.4.4/dist/vue.js"></script>
         <script>
+            'use strict'
+
             var app = new Vue({
                 el: '#app',
                 data: {
-                    message: 'Hello Vue.js!',
-                    seen: true
+                    message: '보간법',
+                    vOnceMessage: '변경되지 않습니다.'
                 },
+                methods: {
+                    onceTest() {
+                        this.vOnceMessage = '데이터가 변경 되었습니다.';
+                    }
+                }
             })
         </script>
     </body>
